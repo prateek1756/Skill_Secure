@@ -1,0 +1,158 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme - Trust-driven design with Blue, Purple, White
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 14% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 20%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 80% 56%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 260 80% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 220 14% 20%;
+
+    --sidebar-primary: 217 91% 60%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 260 80% 56%;
+
+    --sidebar-accent-foreground: 0 0% 100%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 220 14% 12%;
+    --foreground: 220 13% 91%;
+
+    --card: 220 14% 18%;
+    --card-foreground: 220 13% 91%;
+
+    --popover: 220 14% 18%;
+    --popover-foreground: 220 13% 91%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 14% 12%;
+
+    --secondary: 260 80% 56%;
+    --secondary-foreground: 220 14% 12%;
+
+    --muted: 220 12% 28%;
+    --muted-foreground: 220 9% 66%;
+
+    --accent: 260 80% 56%;
+    --accent-foreground: 220 14% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 220 14% 12%;
+
+    --border: 220 12% 28%;
+    --input: 220 12% 28%;
+    --ring: 217 91% 60%;
+    --sidebar-background: 220 14% 12%;
+    --sidebar-foreground: 220 13% 91%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 220 14% 12%;
+    --sidebar-accent: 260 80% 56%;
+    --sidebar-accent-foreground: 220 14% 12%;
+    --sidebar-border: 220 12% 28%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1 {
+    @apply text-4xl font-bold tracking-tight md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl font-bold tracking-tight md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl font-bold tracking-tight;
+  }
+
+  h4 {
+    @apply text-xl font-bold;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .gradient-blue-purple {
+    @apply bg-gradient-to-br from-blue-50 via-white to-purple-50;
+  }
+
+  .glass {
+    @apply bg-white/40 backdrop-blur-sm border border-white/60;
+  }
+
+  .glass-dark {
+    @apply bg-slate-900/40 backdrop-blur-sm border border-slate-700/30;
+  }
+
+  .trust-card {
+    @apply rounded-2xl p-6 bg-white shadow-soft-md border border-slate-100 hover:shadow-soft-lg transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent;
+  }
+}
